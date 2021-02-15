@@ -13,14 +13,14 @@ import { useState } from 'react';
 // If this were node we'd:
 // const HelloCullen = require('./HelloCullen');
 // But client-side (React) we do this:
-import HelloCullen from './HelloCullen';
+// import HelloCullen from './HelloCullen';
 
 // React is made up of components
 // App is a component.
 // Components are functions that return JSX
 // You can nest components (see HelloCullen below)
 function App() {
-  let name = 'Edan';
+  const [name, setName] = useState('Edan');
 
   //THIS WON"T RENDER:
   // let drinkCount = 1;
@@ -53,7 +53,13 @@ function App() {
 
       {/* <button onClick={() => setDrinkCount(0)}>Sober Up</button> */}
       <button onClick={soberUp}>Sober Up</button>
+
+      <input placeholder="Enter your name" 
+      onChange={(event) => {
+        console.log('changing name', event.target.value)
+        setName(event.target.value)}} />
     </div>
+    // event.target is equivalent of $(this) in JQ
   );
 }
 
