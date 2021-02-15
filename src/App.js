@@ -31,6 +31,10 @@ function App() {
   // const drinkCount = returnValOfUseState[0];
   // const setDrinkCount = returnValOfUseState[1];
 
+  const soberUp = () => {
+    setDrinkCount(0);
+  };
+
   return (
     <div>
       <h1>Cullen Happy Hour!</h1>
@@ -47,7 +51,8 @@ function App() {
         Drink Up ^
       </button>
 
-      <button onClick={() => setDrinkCount(0)}>Sober Up</button>
+      {/* <button onClick={() => setDrinkCount(0)}>Sober Up</button> */}
+      <button onClick={soberUp}>Sober Up</button>
     </div>
   );
 }
